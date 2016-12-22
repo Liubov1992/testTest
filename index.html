@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+#modal_form {
+	width: 300px; 
+	height: 300px; 
+	border-radius: 5px;
+	border: 3px #000 solid;
+	background: #fff;
+	position: fixed; 
+	top: 45%; 
+	left: 50%; 
+	margin-top: -150px;
+	margin-left: -150px;/*polovina viysoty*/
+	display: none; 
+	opacity: 0; 
+	z-index: 5; 
+	padding: 20px 10px;
+    overflow: auto;
+}
+
+#modal_form #modal_close {
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 5px;
+	right: 0px;
+	cursor: pointer;
+	display: block;
+}
+
+#overlay {
+	z-index:3; 
+	position:fixed; 
+	background-color:#000; 
+	opacity:0.8; 
+	-moz-opacity:0.8; 
+	filter:alpha(opacity=80);
+	width:100%; 
+	height:100%; 
+	top:0; 
+	left:0;
+	cursor:pointer;
+	display:none; 
+}
+         .addressDet{
+            width: 50px;
+        }
+    
+    </style>
+</head>
+<body>
+    <a href="#modal_form" id="go">Check-in</a>
+    <div id="modal_form">
+      <span id="modal_close">X</span>
+        <form action="" method="get" class="form">
+      <p><label>Name: 
+          <input type="text" name="name" id="name" value="Name and Surname">
+      </label></p>
+      <p><label>User Name: 
+          <input type="text" name="userName" id="userName" style="width:150px">
+      </label></p>
+      <p><label>Email: 
+          <input type="email" name="email" id="email">
+      </label></p>
+      <hr>
+      <p><b style="color : grey">Address</b>
+      <br><br>
+      <label>Street:
+          <input class="addressDet" type="text" id="street" name="street">
+      </label><label>Suite:
+          <input class="addressDet" type="text" id="suite" name="suite"> 
+      </label>
+      <label>City:
+          <input class="addressDet" type="text" id="city" name="city">
+      </label>
+      <label>Zipcode:
+          <input class="addressDet" type="text" id="zipcode" name="zipcode">
+      </label></p>
+        <hr>
+      <p><label>Phone:
+          <input type="text" id="phone" name="phone">
+      </label></p>
+      <p><label>Website:
+          <input type="text" id="website" name="website">
+      </label></p>
+        <hr>
+      <p><b style="color : grey">Company information</b>
+      <br><br>
+      <label>Name: 
+          <input type="text" id="companyName" name="companyName">
+      </label><br><label>Catch phrase:
+          <input type="text" id="catchPhrase" name="catchPhrase" style="width : 150px">
+      </label></p>
+          <input type="submit" name="submitForm" value="Submit" id="submitForm">
+          <input type="reset" name="resetFrom" value="Reset">
+  </form>
+    </div>
+    <div id="overlay"></div>
+   
+   <table id="container" border="1">
+            <tr>
+           <th>Id</th>
+           <th>Name</th>
+           <th>userName</th>
+           <th>Email</th>
+           <th>Address</th>
+           <th>Phone</th>
+           <th>Website</th>
+           <th>Company</th>
+        </tr>
+    </table>
+    
+    
+    
+    
+    
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

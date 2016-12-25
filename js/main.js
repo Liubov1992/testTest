@@ -32,9 +32,12 @@
                     var x2 = res[i].address.geo.lat;
                     var y2 = res[i].address.geo.lng;
                     var distance = Math.round(6371*(Math.acos(Math.sin(x1)*Math.sin(x2)+Math.cos(x1)*Math.cos(x2)*Math.cos(y1-y2))));  
-             $('#container').append('<tr><td>'+Users.length+'</td><td>'+res[i].name+'</td><td>'+res[i].username+'</td><td>'+res[i].email+'</td><td>'+'Street: '+res[i].address.street+'<br>Suite :'+res[i].address.suite+'<br>City: '+res[i].address.city+'<br>Zipcode: '+res[i].address.zipcode+'<br>Distance: '+distance+' km</td><td>'+res[i].phone+'</td><td>'+res[i].website+'</td><td>'+'Name: '+res[i].company.name+'<br>Catch phrase: '+res[i].company.catchPhrase+'</td></tr>');
+             $('#container').append('<tr><td>'+Users.length+'</td><td class="nameSelect">'+res[i].name+'</td><td>'+res[i].username+'</td><td>'+res[i].email+'</td><td>'+'Street: '+res[i].address.street+'<br>Suite :'+res[i].address.suite+'<br>City: '+res[i].address.city+'<br>Zipcode: '+res[i].address.zipcode+'<br>Distance: '+distance+' km</td><td>'+res[i].phone+'</td><td>'+res[i].website+'</td><td>'+'Name: '+res[i].company.name+'<br>Catch phrase: '+res[i].company.catchPhrase+'</td></tr>');
                 
-               var newUser = {
+                };
+                
+                
+                      var newUser = {
             name: $('.form').find('#name').val(),
             userName: $('.form').find('#userName').val(),
             email: $('.form').find('#email').val(),
@@ -49,16 +52,55 @@
             };
                     $('.form').submit( function(e) {
                         e.preventDefault();
-                        var k = Users.length+1;
-                        var n = k+1;
-                                for (k; k < n; k++){
+                        var a = Users.length+1;
+                        var k = 10;
+                                for (k; k < 11; k++){
                                 Users.push(newUser);
-                                $('#container').append('<tr><td class="id">'+i+'</td><td>'+newUser.name+'</td><td>'+newUser.userName+'</td><td>'+newUser.email+'</td><td>Street: '+newUser.street+'<br>Suite: '+newUser.suite+'<br>City: '+newUser.city+'<br>Zipcode: '+newUser.zipcode+'</td><td>'+newUser.phone+'</td><td>'+newUser.website+'</td><td>Name: '+newUser.companyName+'<br>Catch phrase: '+newUser.catchPhrase+'</td></tr>');  
+                                $('#container').append('<tr><td class="id">'+a+'</td><td class="nameSelect">'+newUser.name+'</td><td>'+newUser.userName+'</td><td>'+newUser.email+'</td><td>Street: '+newUser.street+'<br>Suite: '+newUser.suite+'<br>City: '+newUser.city+'<br>Zipcode: '+newUser.zipcode+'</td><td>'+newUser.phone+'</td><td>'+newUser.website+'</td><td>Name: '+newUser.companyName+'<br>Catch phrase: '+newUser.catchPhrase+'</td></tr>');  
                         
                     }
             });
-              };
                 
+
+                
+  
+                
+   var filter1 = $('#nameSearch');
+        filter1.keyup(function(e){
+            $('.table td:nth-child(2)').each(function(){
+                if(filter1.val() != $(this).text().substr(0, filter1.val().length)) {
+                    $(this).parent().hide();
+                    } else (
+                    $(this).parent().show()
+                    )
+             });
+        });
+    
+    var filter2 = $('#userNameSearch');
+        filter2.keyup(function(e){
+            $('.table td:nth-child(3)').each(function(){
+                if(filter2.val() != $(this).text().substr(0, filter2.val().length)) {
+                    $(this).parent().hide();
+                    } else (
+                    $(this).parent().show()
+                    )
+             });
+        });
+    
+    var filter3 = $('#emailSearch');
+        filter3.keyup(function(e){
+            $('.table td:nth-child(4)').each(function(){
+                if(filter3.val() != $(this).text().substr(0, filter3.val().length)) {
+                    $(this).parent().hide();
+                    } else (
+                    $(this).parent().show()
+                    )
+             });
+        });
+                
+                
+            
+     
                 
                 
 $(document).ready(function() { 

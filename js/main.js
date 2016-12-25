@@ -37,21 +37,21 @@
                 };
                 
                 
-                      var newUser = {
-            name: $('.form').find('#name').val(),
-            userName: $('.form').find('#userName').val(),
-            email: $('.form').find('#email').val(),
-            street: $('.form').find('#street').val(),
-            suite: $('.form').find('#suite').val(),
-            city: $('.form').find('#city').val(),
-            zipcode: $('.form').find('#zipcode').val(),
-            phone: $('.form').find('#phone').val(),
-            website: $('.form').find('#website').val(),
-            companyName: $('.form').find('#companyName').val(),
-            catchPhrase: $('.form').find('#catchPhrase').val(),
-            };
                     $('.form').submit( function(e) {
                         e.preventDefault();
+                                 var newUser = {
+            name: $('#form').find("#name").val(),
+            userName: $('#form').find('#userName').val(),
+            email: $('#form').find('#email').val(),
+            street: $('#form').find('#street').val(),
+            suite: $('#form').find('#suite').val(),
+            city: $('#form').find('#city').val(),
+            zipcode: $('#form').find('#zipcode').val(),
+            phone: $('#form').find('#phone').val(),
+            website: $('#form').find('#website').val(),
+            companyName: $('#form').find('#companyName').val(),
+            catchPhrase: $('#form').find('#catchPhrase').val(),
+            };
                         var a = Users.length+1;
                         var k = Users.length;
                                 for (k; k < a; k++){

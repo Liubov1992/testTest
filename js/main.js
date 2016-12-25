@@ -53,8 +53,8 @@
                     $('.form').submit( function(e) {
                         e.preventDefault();
                         var a = Users.length+1;
-                        var k = 10;
-                                for (k; k < 11; k++){
+                        var k = Users.length;
+                                for (k; k < a; k++){
                                 Users.push(newUser);
                                 $('#container').append('<tr><td class="id">'+a+'</td><td>'+newUser.name+'</td><td>'+newUser.userName+'</td><td>'+newUser.email+'</td><td>Street: '+newUser.street+'<br>Suite: '+newUser.suite+'<br>City: '+newUser.city+'<br>Zipcode: '+newUser.zipcode+'</td><td>'+newUser.phone+'</td><td>'+newUser.website+'</td><td>Name: '+newUser.companyName+'<br>Catch phrase: '+newUser.catchPhrase+'</td></tr>');  
                         
